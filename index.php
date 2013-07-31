@@ -18,7 +18,7 @@
 <script src="js/vendor/jquery-1.10.1.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/vendor/moment.min.js"></script>
-<script src="js/vendor/daterangepicker.js"></script>
+
 
 <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -32,7 +32,7 @@
 <!-- Docs master nav 
     <div class="navbar navbar-fixed-top navbar-inverse navbar-fixed-top bs-docs-nav">
   <div class="container">
-    <a href="./" class="navbar-brand">Bootstrap 3 RC1</a>
+    <a href="./" class="navbar-brand">Recruitment System</a>
     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
