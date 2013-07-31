@@ -62,7 +62,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
-            <form class="form-signin">
+            <form class="form-signin" action="login.php">
               <h2 class="form-signin-heading">Please sign in</h2>
               <div class="form-group">
                 <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email">
