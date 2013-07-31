@@ -1,0 +1,146 @@
+/* @override 
+	http://localhost/ihipower/recruitment2/css/main.css
+	http://localhost/ihipower/recruitment/css/main.css
+*/
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* Top nav and header
+-------------------------------------------------- */
+
+.bs-docs-nav {
+  background-color: #4c8daf;
+}
+.bs-docs-nav .navbar-brand {
+  color: #fff;
+}
+.bs-docs-nav .navbar-nav > li > a {
+  color: #e4e4e4;
+}
+.bs-docs-nav .navbar-nav > li > a:hover {
+  color: #fff;
+  background-color: #4f97c0;
+}
+.bs-docs-nav .navbar-nav > .active > a,
+.bs-docs-nav .navbar-nav > .active > a:hover {
+  color: #fff;
+  background-color: #3c7290;
+}
+.bs-docs-nav .navbar-toggle {
+  border-color: #563d7c;
+}
+.bs-docs-nav .navbar-toggle:hover {
+  background-color: #463265;
+  border-color: #463265;
+}
+
+.navbar p.navbar-text, .navbar p.navbar-text a {
+	color: #e4e4e4;
+}
+
+/* Home masthead
+-------------------------------------------------- */
+
+.masthead {
+	background-color: #4c8daf;
+	color: #fff;
+	text-align: center;
+	margin-top: -10px;
+	padding-top: 80px;
+	padding-bottom: 100px;
+}
+
+.masthead .icon-stack {
+	font-size: 72px;
+}
+
+.masthead .icon-light {
+	color: #4f8dad;
+}
+
+.masthead #myModal h2 {
+	color: #666;
+	text-align: left;
+	margin-bottom: 20px;
+	margin-top: 0;
+}
+
+/* Custom button
+-------------------------------------------------- */
+
+/* Override base .btn styles */
+/* Apply text and background changes to three key states: default, hover, and active (click). */
+.btn-ihi,
+.btn-ihi:hover,
+.btn-ihi:active {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Apply the custom-colored gradients */
+/* Note: you'll need to include all the appropriate gradients for various browsers and standards. */
+.btn-ihi {
+  background-color: #4f8dad;
+}
+
+.btn-ihi:hover,
+.btn-ihi:active {
+  background-color: #3f7592;
+}
+
+.row.title .btn {
+	margin-top: 20px;
+}
+
+/* Misc styles
+-------------------------------------------------- */
+
+#users table {
+	margin-top: 40px;
+}
+
+#users .well label {
+	margin-left: 30px;
+}
+
+#users .well label.first {
+	margin-left: 0;
+}
+
+#users .well h5 {
+	margin-top: 0;
+	color: #333;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#users .well {
+	margin-top: 25px;
+}
+
+#users .row.form {
+	margin-top: 20px;
+}
+
+table i.icon-remove {
+	color: #d9534f;
+}
+
+table i.icon-remove:hover {
+	color: #d43f3a;
+}
+
+table i:hover {
+	text-decoration: none;
+	
+}
+
+
+
+
+
+
+
+
