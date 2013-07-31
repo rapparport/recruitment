@@ -9,8 +9,8 @@
       <ul class="nav navbar-nav">
         <li><a href="candidates.php">Candidates</a></li>
         <li><a href="users.php">Users</a></li>
-        <li class="active"><a href="templates.php">Email Templates</a></li>
-        <li><a href="plants.php">Power Plants</a></li>
+        <li><a href="templates.php">Email Templates</a></li>
+        <li class="active"><a href="plants.php">Power Plants</a></li>
       </ul>
       <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">Vahe Avagyan</a> | <a href="#" class="navbar-link"><i class="icon-user"></i> My Profile</a> | <a href="#" class="navbar-link">Sign Out</a></p>
     </div>
@@ -19,35 +19,50 @@
 <div class="container">
   <div class="row title">
     <div class="col-12 col-sm-8 col-lg-8">
-      <h1><i class="icon-envelope"></i> Email Templates</h1>
+      <h1><i class="icon-gears"></i> Power Plants</h1>
     </div>
-    <div class="col-6 col-sm-4 col-lg-4"> <a href="template_add.php">
-      <button type="button" class="btn btn-ihi btn-large pull-right"><i class="icon-plus-sign icon-large"></i> Add Template</button>
+    <div class="col-6 col-sm-4 col-lg-4"> <a href="plant_add.php">
+      <button type="button" class="btn btn-ihi btn-large pull-right"><i class="icon-plus-sign icon-large"></i> Add Plant</button>
       </a> </div>
   </div>
   <table class="table table-striped table-hover">
     <tr>
-      <th scope="col">Template Name</th>
-      <th scope="col">Template Description</th>
+      <th scope="col">Power Plant Name</th>
+      <th scope="col">Power Plant  Description</th>
       <th scope="col" class="text-center">Delete</th>
     </tr>
     <tr>
-      <td><a href="template_edit.php">Passed</a></td>
+      <td><a href="plant_edit.php">Chinese Station</a></td>
       <td>Announcement for candidate passing exam and qualifying for further evaluation</td>
       <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
     </tr>
     <tr>
-      <td><a href="template_edit.php">Accepted</a></td>
+      <td><a href="plant_edit.php">Rio Brave Fresno</a></td>
       <td>Announcement for offer of employment</td>
       <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
     </tr>
     <tr>
-      <td><a href="template_edit.php">Rejected</a></td>
+      <td><a href="plant_edit.php">Rio Bravo Rocklin </a></td>
       <td>Announcement for candidate failing exam and not qualifying for further evaluation</td>
       <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
     </tr>
     <tr>
-      <td><a href="template_edit.php">Custom</a></td>
+      <td><a href="plant_edit.php">Rio Bravo Jasmin</a></td>
+      <td>Use this template to create blank message</td>
+      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
+    </tr>
+    <tr>
+      <td><a href="plant_edit.php">Rio Bravo Poso</a></td>
+      <td>Use this template to create blank message</td>
+      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
+    </tr>
+    <tr>
+      <td><a href="plant_edit.php">Shasta Renewable</a></td>
+      <td>Use this template to create blank message</td>
+      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
+    </tr>
+    <tr>
+      <td><a href="plant_edit.php">Buena Vista Biomass</a></td>
       <td>Use this template to create blank message</td>
       <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
     </tr>

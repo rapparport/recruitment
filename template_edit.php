@@ -10,6 +10,7 @@
         <li><a href="candidates.php">Candidates</a></li>
         <li><a href="users.php">Users</a></li>
         <li class="active"><a href="templates.php">Email Templates</a></li>
+        <li><a href="plants.php">Power Plants</a></li>
       </ul>
       <p class="navbar-text pull-right">Signed in as <a href="user_edit.php" class="navbar-link">Vahe Avagyan</a> | <a href="#" class="navbar-link"><i class="icon-user"></i> My Profile</a> | <a href="#" class="navbar-link">Sign Out</a></p>
     </div>

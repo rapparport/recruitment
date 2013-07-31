@@ -10,6 +10,7 @@
         <li class="active"><a href="candidates.php">Candidates</a></li>
         <li><a href="users.php">Users</a></li>
         <li><a href="templates.php">Email Templates</a></li>
+        <li><a href="plants.php">Power Plants</a></li>
       </ul>
       <p class="navbar-text pull-right">Signed in as <a href="user_edit.php" class="navbar-link">Vahe Avagyan</a> | <a href="#" class="navbar-link"><i class="icon-user"></i> My Profile</a> | <a href="#" class="navbar-link">Sign Out</a></p>
     </div>
@@ -29,8 +30,8 @@
   <div class="well well-small"> 
     <!-- Split button -->
     <div class="btn-group">
-      <button type="button" class="btn btn-ihi">Name</button>
-      <button type="button" class="btn btn-ihi dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
+      <button type="button" class="btn btn-ihi btn-small">Name</button>
+      <button type="button" class="btn btn-ihi btn-small dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
       <ul class="dropdown-menu">
         <li><a href="#">Sort by Last Name</a></li>
         <li><a href="#">Sort by First Name</a></li>
@@ -38,8 +39,8 @@
     </div>
     <!-- Split button -->
     <div class="btn-group">
-      <button type="button" class="btn btn-ihi">Recommend</button>
-      <button type="button" class="btn btn-ihi dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
+      <button type="button" class="btn btn-ihi btn-small">Recommend</button>
+      <button type="button" class="btn btn-ihi btn-small dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
       <ul class="dropdown-menu">
         <li><a href="#">Recommended Only</a></li>
         <li><a href="#">Not Recommended Only</a></li>
@@ -47,8 +48,8 @@
     </div>
     <!-- Split button -->
     <div class="btn-group">
-      <button type="button" class="btn btn-ihi">Pass Probability</button>
-      <button type="button" class="btn btn-ihi dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
+      <button type="button" class="btn btn-ihi btn-small">Pass Probability</button>
+      <button type="button" class="btn btn-ihi btn-small dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
       <ul class="dropdown-menu">
         <li><a href="#">Over 75%</a></li>
         <li><a href="#">50% to 75%</a></li>
@@ -57,20 +58,18 @@
     </div>
     <!-- Split button -->
     <div class="btn-group">
-      <button type="button" class="btn btn-ihi">Position</button>
-      <button type="button" class="btn btn-ihi dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
+      <button type="button" class="btn btn-ihi btn-small">Position</button>
+      <button type="button" class="btn btn-ihi btn-small dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
       <ul class="dropdown-menu">
-        <li><a href="#">O&M Tech 1</a></li>
-        <li><a href="#">O&M Tech 2</a></li>
-        <li><a href="#">O&M Tech 3</a></li>
-        <li><a href="#">Environmental Tech</a></li>
-        <li><a href="#">Plant Manager</a></li>
+        <li><a href="#">O&M Tech I</a></li>
+        <li><a href="#">O&M Tech II</a></li>
+        <li><a href="#">O&M Tech III</a></li>
       </ul>
     </div>
     <!-- Split button -->
     <div class="btn-group">
-      <button type="button" class="btn btn-ihi">Plant Location</button>
-      <button type="button" class="btn btn-ihi dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
+      <button type="button" class="btn btn-ihi btn-small">Plant Location</button>
+      <button type="button" class="btn btn-ihi btn-small dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
       <ul class="dropdown-menu">
         <li><a href="#">Chinese Station</a></li>
         <li><a href="#">Rio Bravo Fresno</a></li>
@@ -78,11 +77,12 @@
         <li><a href="#">Rio Bravo Jasmin</a></li>
         <li><a href="#">Rio Bravo Poso</a></li>
         <li><a href="#">Shasta Renewable</a></li>
+        <li><a href="#">Buena Vista Biomass</a></li>
       </ul>
     </div>
     <!-- Single date picker button -->
     <div id="reportrange" class="btn-group">
-      <button type="button" class="btn btn-ihi dropdown-toggle" data-toggle="dropdown"> Date Tested <span class="caret"></span> </button>
+      <button type="button" class="btn btn-ihi btn-small dropdown-toggle" data-toggle="dropdown"> Date Tested <span class="caret"></span> </button>
     </div>
     <script type="text/javascript">
 $('#reportrange').daterangepicker(
@@ -99,8 +99,8 @@ $('#reportrange').daterangepicker(
 );
 </script> 
     <!-- Search box -->
-    <form class=" pull-right" action="">
-      <input type="text" class="form-control col-lg-8" placeholder="Search">
+    <form class="pull-right" action="">
+      <input type="text" class="form-control input-small col-lg-8" placeholder="Search">
     </form>
   </div>
   <form name="theForm">
@@ -117,7 +117,7 @@ $('#reportrange').daterangepicker(
         <th scope="col">Test Result</th>
         <th scope="col">Pass Probability</th>
         <th scope="col">Position</th>
-        <th scope="col">Work Location</th>
+        <th scope="col">Plant Location</th>
       </tr>
       <tr>
         <td><input type="checkbox" value=""></td>
@@ -157,7 +157,19 @@ $('#reportrange').daterangepicker(
       </tr>
     </table>
   </form>
-  <ul class="pagination pagination-small">
+  <div class="container">
+    <!-- Split button -->
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-ihi btn-small"><i class="icon-envelope-sign icon-large"></i> Email</button>
+      <button type="button" class="btn btn-ihi btn-small dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Passed</a></li>
+        <li><a href="#">Accepted</a></li>
+        <li><a href="#">Rejected</a></li>
+        <li><a href="#">Custom</a></li>
+      </ul>
+    </div>
+  <ul class="pagination pagination-small pull-left">
     <li><a href="#">&laquo;</a></li>
     <li><a href="#">1</a></li>
     <li><a href="#">2</a></li>
@@ -166,6 +178,7 @@ $('#reportrange').daterangepicker(
     <li><a href="#">5</a></li>
     <li><a href="#">&raquo;</a></li>
   </ul>
+  </div>
   <hr>
   <footer>
     <p><small>Copyright &copy; <?php echo date("Y") ?> IHI Power Services Corp. All rights reserved.</small></p>

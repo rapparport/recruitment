@@ -9,8 +9,8 @@
       <ul class="nav navbar-nav">
         <li><a href="candidates.php">Candidates</a></li>
         <li><a href="users.php">Users</a></li>
-        <li class="active"><a href="templates.php">Email Templates</a></li>
-        <li><a href="plants.php">Power Plants</a></li>
+        <li><a href="templates.php">Email Templates</a></li>
+        <li class="active"><a href="plants.php">Power Plants</a></li>
       </ul>
       <p class="navbar-text pull-right">Signed in as <a href="user_edit.php" class="navbar-link">Vahe Avagyan</a> | <a href="#" class="navbar-link"><i class="icon-user"></i> My Profile</a> | <a href="#" class="navbar-link">Sign Out</a></p>
     </div>
@@ -19,7 +19,7 @@
 <div class="container">
   <div class="row title">
     <div class="col-lg-8">
-      <h1><i class="icon-envelope"></i> Add Template</h1>
+      <h1><i class="icon-gear"></i> Add Power Plant</h1>
     </div>
   </div>
   <div class="row form">
@@ -27,16 +27,12 @@
       <form>
         <fieldset>
           <div class="form-group">
-            <label for="InputTemplateName">Template name</label>
-            <input type="text" class="form-control" id="InputTemplateName" placeholder="Enter template name">
+            <label for="InputTemplateName">Power plant name</label>
+            <input type="text" class="form-control" id="InputPlantName" placeholder="Enter power plant name">
           </div>
           <div class="form-group">
-            <label for="InputTemplateDescription">Template description</label>
-            <input type="text" class="form-control" id="InputTemplateDescription" placeholder="Enter brief description">
-          </div>
-          <div class="well">
-            <h5>Template message</h5>
-            <textarea class="form-control" rows="9"></textarea>
+            <label for="InputTemplateDescription">Power plant description</label>
+            <input type="text" class="form-control" id="InputPlantDescription" placeholder="Enter brief description">
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </fieldset>
