@@ -32,11 +32,9 @@
 <!-- Docs master nav 
     <div class="navbar navbar-fixed-top navbar-inverse navbar-fixed-top bs-docs-nav">
   <div class="container">
-<<<<<<< HEAD
-    <a href="./" class="navbar-brand">IHI Recruit</a>
-=======
+
     <a href="./" class="navbar-brand">Recruitment System</a>
->>>>>>> c333d022956c675fc8538b88e6cc3bdcb351af72
+
     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
