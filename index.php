@@ -33,7 +33,7 @@
     <div class="navbar navbar-fixed-top navbar-inverse navbar-fixed-top bs-docs-nav">
   <div class="container">
 
-    <a href="./" class="navbar-brand">Recruitment System</a>
+    <a href="./" class="navbar-brand">IHI Recruit</a>
 
     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
       <span class="icon-bar"></span>
