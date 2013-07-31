@@ -1,4 +1,8 @@
 <?php include 'inc/header.php'; ?>
+<?php
+    echo "ok";
+    echo "data is $_SESSION['EMAIL'];"
+    ?>
 <body>
 
 <!-- Master nav -->

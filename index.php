@@ -64,16 +64,16 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
-            <form class="form-signin" action="login.php">
+            <form class="form-signin" name="loginForm" method="post" action="login.php" >
               <h2 class="form-signin-heading">Please sign in</h2>
               <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email">
+                <input type="text" name="exampleInputEmail" class="form-control" id="exampleInputEmail" placeholder="Enter email">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+                <input type="password" name="exampleInputPassword" class="form-control" id="exampleInputPassword" placeholder="Password">
               </div>
               <p><a href="#">Forgot your password?</a></p>
-            <button type="button" class="btn btn-large btn-primary btn-block">Sign in</button>
+            <button class="btn btn-large btn-primary btn-block" type="submit">Sign in</button>
             </form>
           </div>
         </div>
