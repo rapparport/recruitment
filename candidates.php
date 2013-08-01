@@ -1,7 +1,10 @@
-<?php include 'inc/header.php'; ?>
 <?php
 	session_start();
-	if (isset($_SESSION['LOGGEDIN']) && $_SESSION['LOGGEDIN'] == true) 
+	if (!(isset($_SESSION['LOGGEDIN']) && $_SESSION['LOGGEDIN'] == true)) 
+	{
+		header("location:index.php");
+	}
+	else
 	{
     	$userName = $_SESSION['NAMEF']." ".$_SESSION['NAMEL'];
 		$host="localhost"; // Host name
@@ -10,23 +13,21 @@
     	$db_name="recruit_db"; // Database name
     	$tbl_name="recruits"; // Table name
     
-	$con1=mysql_connect("$host", "$username", "$password")or die("cannot connect");
-	// Check connection
-	if (mysqli_connect_errno($con1))
-  	{
-  		echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  	}
-	
-    $result = mysqli_query($con1,"SELECT * FROM `recruits` LIMIT 0, 30 ");
-    
-   	while($row = mysqli_fetch_array($result))
-  	{
-  		echo $row['FirstName'] . " " . $row['FirstName'];
-  		echo "<br>";
-  	}
-  	echo $result;
+		$con1=mysql_connect("$host", "$username", "$password")or die("cannot connect");
+		// Check connection
+		if (mysqli_connect_errno($con1))
+  		{
+  			echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  		}
+    	$result = mysqli_query($con1,"SELECT * FROM `recruits` LIMIT 0, 30 ");
+   		while($row = mysqli_fetch_array($result))
+  		{
+  			echo $row['FirstName'] . " " . $row['FirstName'];
+  			echo "<br>";
+  		}
+  		echo $result;
 ?>
-    
+<?php include 'inc/header.php'; ?>
     
     
 <body>
@@ -237,13 +238,4 @@ function selectToggle(toggle, form) {
 </body>
 </html>
 
-<?php
-} 
-else
-{
-
-	header("location:index.php");
-	echo "Please log in first to see this page.";
-}
-	
-?>
+<?php } ?>
