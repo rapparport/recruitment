@@ -7,7 +7,13 @@
     $tbl_name="user"; // Table name
     
     // Connect to server and select databse.
-    mysql_connect("$host", "$username", "$password")or die("cannot connect");
+    $con = mysql_connect("$host", "$username", "$password")or die("cannot connect");
+    // Check connection
+	if (mysqli_connect_errno($con))
+  	{
+  		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  	}
+
     mysql_select_db("$db_name")or die("cannot select DB");
     
     // username and password sent from form
@@ -30,21 +36,23 @@
     
     if($count==1)
     {
-        //echo "ok";
-        // Register $myusername, $mypassword and redirect
-        //ob_start();
-        //session_register("myusername");
-        //session_register("mypassword");
         session_regenerate_id();
         $member = mysql_fetch_assoc($result);
         $_SESSION['EMAIL'] = $member['Email'];
         $_SESSION['PASS'] = $member['Password'];
+        $_SESSION['LOGGEDIN'] = true;
+     
+        $_SESSION['NAMEF'] = $member['FirstName'];
+        $_SESSION['NAMEL'] = $member['LastName'];
+        
         session_write_close();
+        mysqli_close($con);
         header("location:candidates.php");
         exit();
     }
     else {
         echo "Wrong Username ($myusername) or Password ($mypassword)";
+        mysqli_close($con);
     }
     //ob_end_flush();
     ?>

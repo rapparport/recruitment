@@ -1,8 +1,34 @@
 <?php include 'inc/header.php'; ?>
 <?php
-    echo "ok";
-    echo "data is $_SESSION['EMAIL'];"
-    ?>
+	session_start();
+	if (isset($_SESSION['LOGGEDIN']) && $_SESSION['LOGGEDIN'] == true) 
+	{
+    	$userName = $_SESSION['NAMEF']." ".$_SESSION['NAMEL'];
+		$host="localhost"; // Host name
+    	$username="root"; // Mysql username
+    	$password="root"; // Mysql password
+    	$db_name="recruit_db"; // Database name
+    	$tbl_name="recruits"; // Table name
+    
+	$con1=mysql_connect("$host", "$username", "$password")or die("cannot connect");
+	// Check connection
+	if (mysqli_connect_errno($con1))
+  	{
+  		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  	}
+	
+    $result = mysqli_query($con1,"SELECT * FROM `recruits` LIMIT 0, 30 ");
+    
+   	while($row = mysqli_fetch_array($result))
+  	{
+  		echo $row['FirstName'] . " " . $row['FirstName'];
+  		echo "<br>";
+  	}
+  	echo $result;
+?>
+    
+    
+    
 <body>
 
 <!-- Master nav -->
@@ -16,7 +42,7 @@
         <li><a href="templates.php">Email Templates</a></li>
         <li><a href="plants.php">Power Plants</a></li>
       </ul>
-      <p class="navbar-text pull-right">Signed in as <a href="user_edit.php" class="navbar-link">Vahe Avagyan</a> | <a href="#" class="navbar-link"><i class="icon-user"></i> My Profile</a> | <a href="#" class="navbar-link">Sign Out</a></p>
+      <p class="navbar-text pull-right">Signed in as <a href="user_edit.php" class="navbar-link"><?php echo $userName;?></a> | <a href="#" class="navbar-link"><i class="icon-user"></i> My Profile</a> | <a href="logout.php" class="navbar-link">Sign Out</a></p>
     </div>
   </div>
 </div>
@@ -210,3 +236,14 @@ function selectToggle(toggle, form) {
         </script>
 </body>
 </html>
+
+<?php
+} 
+else
+{
+
+	header("location:index.php");
+	echo "Please log in first to see this page.";
+}
+	
+?>
