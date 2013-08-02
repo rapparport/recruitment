@@ -1,21 +1,9 @@
+<?php include 'inc/checkSession.php'; ?>
 <?php include 'inc/header.php'; ?>
 <body id="users">
 
 <!-- Master nav -->
-<div class="navbar navbar-fixed-top navbar-inverse navbar-fixed-top bs-docs-nav">
-  <div class="container"> <a href="./" class="navbar-brand">Recruitment System</a>
-    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-    <div class="nav-collapse collapse bs-navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="candidates.php">Candidates</a></li>
-        <li><a href="users.php">Users</a></li>
-        <li class="active"><a href="templates.php">Email Templates</a></li>
-        <li><a href="plants.php">Power Plants</a></li>
-      </ul>
-      <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">Vahe Avagyan</a> | <a href="#" class="navbar-link"><i class="icon-user"></i> My Profile</a> | <a href="#" class="navbar-link">Sign Out</a></p>
-    </div>
-  </div>
-</div>
+<?php include 'inc/menu.php'; ?>
 <div class="container">
   <div class="row title">
     <div class="col-12 col-sm-8 col-lg-8">

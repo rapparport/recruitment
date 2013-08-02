@@ -1,16 +1,7 @@
+<?php include 'inc/checkSession.php'; ?>
+<?php include 'inc/header.php'; ?>
 <?php
-	session_start();
-	if (!(isset($_SESSION['LOGGEDIN']) && $_SESSION['LOGGEDIN'] == true)) 
-	{
-		header("location:index.php");
-	}
-	else
-	{
-    	$userName = $_SESSION['NAMEF']." ".$_SESSION['NAMEL'];
-		$host="localhost"; // Host name
-    	$username="root"; // Mysql username
-    	$password="root"; // Mysql password
-    	$db_name="recruit_db"; // Database name
+		include 'inc/db.php';
     	$tbl_name="recruits"; // Table name
     
 		$con1=mysql_connect("$host", "$username", "$password")or die("cannot connect");
@@ -26,27 +17,12 @@
   			echo "<br>";
   		}
   		echo $result;
-?>
-<?php include 'inc/header.php'; ?>
-    
+?>    
     
 <body>
 
 <!-- Master nav -->
-<div class="navbar navbar-fixed-top navbar-inverse navbar-fixed-top bs-docs-nav">
-  <div class="container"> <a href="./" class="navbar-brand">Recruitment System</a>
-    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-    <div class="nav-collapse collapse bs-navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="candidates.php">Candidates</a></li>
-        <li><a href="users.php">Users</a></li>
-        <li><a href="templates.php">Email Templates</a></li>
-        <li><a href="plants.php">Power Plants</a></li>
-      </ul>
-      <p class="navbar-text pull-right">Signed in as <a href="user_edit.php" class="navbar-link"><?php echo $userName;?></a> | <a href="#" class="navbar-link"><i class="icon-user"></i> My Profile</a> | <a href="logout.php" class="navbar-link">Sign Out</a></p>
-    </div>
-  </div>
-</div>
+<?php include 'inc/menu.php'; ?>
 <div class="container">
   <div class="row title">
     <div class="col-12 col-sm-8 col-lg-8">
@@ -238,4 +214,3 @@ function selectToggle(toggle, form) {
 </body>
 </html>
 
-<?php } ?>
