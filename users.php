@@ -1,5 +1,25 @@
 <?php include 'inc/checkSession.php'; ?>
 <?php include 'inc/header.php'; ?>
+<?php include 'inc/passToStars.php';?>
+<?php
+	session_start();
+    include 'inc/db.php';
+    $tbl_name="user"; // Table name
+    
+    // Connect to server and select databse.
+    $con = mysql_connect("$host", "$username", "$password")or die("cannot connect");
+    // Check connection
+	if (mysqli_connect_errno($con))
+  	{
+  		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  	}
+
+    mysql_select_db("$db_name")or die("cannot select DB");
+    
+    $sql="SELECT * FROM $tbl_name";
+    $result=mysql_query($sql);
+?>
+
 <body id="users">
 
 <!-- Master nav -->
@@ -21,27 +41,18 @@
       <th scope="col">Password</th>
       <th scope="col">Plant Location</th>
     </tr>
-    <tr>
-      <td><a href="user_edit.php">Avagyan</a></td>
-      <td>Vahe</td>
-      <td>avagyanvahe@gmail.com</td>
-      <td>**********</td>
+    <?php
+    while($member = mysql_fetch_array($result))
+  	{
+  	?>
+  	<tr>
+  	  <td><a href="user_edit.php"><?php echo $member['LastName']; ?></a></td>
+      <td><?php echo $member['FirstName']; ?></td>
+      <td><?php echo $member['Email']; ?></td>
+      <td><?php echo passToStars($member['Password']); ?></td>
       <td>Corporate</td>
-    </tr>
-    <tr>
-      <td><a href="user_edit.php">Rapparport</a></td>
-      <td>Todd</td>
-      <td>todd@rapparport.com</td>
-      <td>**********</td>
-      <td>Corporate</td>
-    </tr>
-    <tr>
-      <td><a href="user_edit.php">Edison</a></td>
-      <td>Thomas</td>
-      <td>tom@edison.com</td>
-      <td>**********</td>
-      <td>Chinese Station</td>
-    </tr>
+  	</tr>
+	<?php } ?>
   </table>
   <hr>
   <footer>

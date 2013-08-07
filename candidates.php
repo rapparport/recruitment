@@ -1,23 +1,24 @@
 <?php include 'inc/checkSession.php'; ?>
 <?php include 'inc/header.php'; ?>
 <?php
-		include 'inc/db.php';
-    	$tbl_name="recruits"; // Table name
+	session_start();
+    include 'inc/db.php';
+    $tbl_name="recruits"; // Table name
     
-		$con1=mysql_connect("$host", "$username", "$password")or die("cannot connect");
-		// Check connection
-		if (mysqli_connect_errno($con1))
-  		{
-  			echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  		}
-    	$result = mysqli_query($con1,"SELECT * FROM `recruits` LIMIT 0, 30 ");
-   		while($row = mysqli_fetch_array($result))
-  		{
-  			echo $row['FirstName'] . " " . $row['FirstName'];
-  			echo "<br>";
-  		}
-  		echo $result;
-?>    
+    // Connect to server and select databse.
+    $con = mysql_connect("$host", "$username", "$password")or die("cannot connect");
+    // Check connection
+	if (mysqli_connect_errno($con))
+  	{
+  		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  	}
+
+    mysql_select_db("$db_name")or die("cannot select DB");
+    
+    $sql="SELECT * FROM $tbl_name";
+    $result=mysql_query($sql);
+    $count = 0;
+?>
     
 <body>
 
@@ -126,42 +127,27 @@ $('#reportrange').daterangepicker(
         <th scope="col">Position</th>
         <th scope="col">Plant Location</th>
       </tr>
+      <?php
+     
+      while($row = mysql_fetch_array($result))
+  	  {
+  	  ?>
       <tr>
-        <td><input type="checkbox" value=""></td>
-        <td><a href="#">Rapparport</a></td>
-        <td>Todd</td>
-        <td>todd@rapparport.com</td>
-        <td>07/26/13</td>
-        <td>Irvine</td>
-        <td>R</td>
-        <td>87%</td>
-        <td>O&M Tech 1</td>
-        <td>Chinese Station</td>
+        <td><input type="checkbox" value="" name=<?php echo "checkbox".$count; ?>></td>
+        <td><a href="#"><?php echo $row['LastName'];?></a></td>
+        <td><?php echo $row['FirstName'];?></td>
+        <td><?php echo $row['Email'];?></td>
+        <td><?php echo $row['TestDate'];?></td>
+        <td><?php echo $row['TestLocation'];?></td>
+        <td><?php echo $row['TestResult'];?></td>
+        <td><?php echo $row['ProbPass'];?></td>
+        <td><?php echo $row['Position'];?></td>
+        <td><?php echo $row['WorkLocation'];?></td>
       </tr>
-      <tr>
-        <td><input type="checkbox" value=""></td>
-        <td><a href="#">Rapparport</a></td>
-        <td>Todd</td>
-        <td>todd@rapparport.com</td>
-        <td>07/26/13</td>
-        <td>Irvine</td>
-        <td>R</td>
-        <td>87%</td>
-        <td>O&M Tech 1</td>
-        <td>Chinese Station</td>
-      </tr>
-      <tr>
-        <td><input type="checkbox" value=""></td>
-        <td><a href="#">Rapparport</a></td>
-        <td>Todd</td>
-        <td>todd@rapparport.com</td>
-        <td>07/26/13</td>
-        <td>Irvine</td>
-        <td>R</td>
-        <td>87%</td>
-        <td>O&M Tech 1</td>
-        <td>Chinese Station</td>
-      </tr>
+      <?php 
+      $count = $count+1;
+      } 
+      ?>
     </table>
   </form>
   <div class="container">
