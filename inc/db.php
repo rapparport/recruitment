@@ -1,6 +1,6 @@
 <?php
-$host="localhost"; // Host name
-$username="root"; // Mysql username
-$password="root"; // Mysql password
-$db_name="recruit_db"; // Database name
+$host="dbrecruits.db.10180280.hostedresource.com"; // Host name
+$username="dbrecruits"; // Mysql username
+$password="n@igJE6g"; // Mysql password
+$db_name="dbrecruits"; // Database name
 ?>

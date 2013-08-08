@@ -19,7 +19,7 @@
     $result=mysql_query($sql);
     $count = 0;
 ?>
-    
+
 <body>
 
 <!-- Master nav -->
@@ -29,10 +29,9 @@
     <div class="col-12 col-sm-8 col-lg-8">
       <h1><i class="icon-group"></i> Candidates</h1>
     </div>
-    <div class="col-6 col-sm-4 col-lg-4">
-            <a href="candidate_add.php">
-<button type="button" class="btn btn-ihi btn-large pull-right"><i class="icon-plus-sign icon-large"></i> Add Candidate</button></a>
-    </div>
+    <div class="col-6 col-sm-4 col-lg-4"> <a href="candidate_add.php">
+      <button type="button" class="btn btn-ihi btn-large pull-right"><i class="icon-plus-sign icon-large"></i> Add Candidate</button>
+      </a> </div>
   </div>
   <h3>Filter Candidates</h3>
   <div class="well well-small"> 
@@ -115,42 +114,46 @@ $('#reportrange').daterangepicker(
     Select <a href="javascript:selectToggle(true, 'theForm');">All</a> | <a href="javascript:selectToggle(false, 'theForm');">None</a>
     <p>
     <table class="table table-striped table-hover">
-      <tr>
-        <th scope="col">&nbsp;</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Email Address</th>
-        <th scope="col">Test Date</th>
-        <th scope="col">Test Location</th>
-        <th scope="col">Test Result</th>
-        <th scope="col">Pass Probability</th>
-        <th scope="col">Position</th>
-        <th scope="col">Plant Location</th>
-      </tr>
-      <?php
+      <thead>
+        <tr>
+          <th scope="col">&nbsp;</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Email Address</th>
+          <th scope="col">Test Date</th>
+          <th scope="col">Test Location</th>
+          <th scope="col">Test Result</th>
+          <th scope="col">Pass Probability</th>
+          <th scope="col">Position</th>
+          <th scope="col">Plant Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
      
       while($row = mysql_fetch_array($result))
   	  {
   	  ?>
-      <tr>
-        <td><input type="checkbox" value="" name=<?php echo "checkbox".$count; ?>></td>
-        <td><a href="#"><?php echo $row['LastName'];?></a></td>
-        <td><?php echo $row['FirstName'];?></td>
-        <td><?php echo $row['Email'];?></td>
-        <td><?php echo $row['TestDate'];?></td>
-        <td><?php echo $row['TestLocation'];?></td>
-        <td><?php echo $row['TestResult'];?></td>
-        <td><?php echo $row['ProbPass'];?></td>
-        <td><?php echo $row['Position'];?></td>
-        <td><?php echo $row['WorkLocation'];?></td>
-      </tr>
-      <?php 
+        <tr>
+          <td><input type="checkbox" value="" name=<?php echo "checkbox".$count; ?>></td>
+          <td><a href="#"><?php echo $row['LastName'];?></a></td>
+          <td><?php echo $row['FirstName'];?></td>
+          <td><?php echo $row['Email'];?></td>
+          <td><?php echo $row['TestDate'];?></td>
+          <td><?php echo $row['TestLocation'];?></td>
+          <td><?php echo $row['TestResult'];?></td>
+          <td><?php echo $row['ProbPass'];?></td>
+          <td><?php echo $row['Position'];?></td>
+          <td><?php echo $row['WorkLocation'];?></td>
+        </tr>
+        <?php 
       $count = $count+1;
       } 
       ?>
+      </tbody>
     </table>
   </form>
-  <div class="container">
+  <div class="container"> 
     <!-- Split button -->
     <div class="btn-group pull-right">
       <button type="button" class="btn btn-ihi btn-small"><i class="icon-envelope-sign icon-large"></i> Email</button>
@@ -162,15 +165,15 @@ $('#reportrange').daterangepicker(
         <li><a href="#">Custom</a></li>
       </ul>
     </div>
-  <ul class="pagination pagination-small pull-left">
-    <li><a href="#">&laquo;</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">&raquo;</a></li>
-  </ul>
+    <ul class="pagination pagination-small pull-left">
+      <li><a href="#">&laquo;</a></li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">&raquo;</a></li>
+    </ul>
   </div>
   <hr>
   <footer>
@@ -199,4 +202,3 @@ function selectToggle(toggle, form) {
         </script>
 </body>
 </html>
-

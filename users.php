@@ -34,25 +34,29 @@
       </a> </div>
   </div>
   <table class="table table-striped table-hover">
-    <tr>
-      <th scope="col">Last Name</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Email Address</th>
-      <th scope="col">Password</th>
-      <th scope="col">Plant Location</th>
-    </tr>
-    <?php
+    <thead>
+      <tr>
+        <th scope="col">Last Name</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Email Address</th>
+        <th scope="col">Password</th>
+        <th scope="col">Plant Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
     while($member = mysql_fetch_array($result))
   	{
   	?>
-  	<tr>
-  	  <td><a href="user_edit.php"><?php echo $member['LastName']; ?></a></td>
-      <td><?php echo $member['FirstName']; ?></td>
-      <td><?php echo $member['Email']; ?></td>
-      <td><?php echo passToStars($member['Password']); ?></td>
-      <td>Corporate</td>
-  	</tr>
-	<?php } ?>
+      <tr>
+        <td><a href="user_edit.php"><?php echo $member['LastName']; ?></a></td>
+        <td><?php echo $member['FirstName']; ?></td>
+        <td><?php echo $member['Email']; ?></td>
+        <td><?php echo passToStars($member['Password']); ?></td>
+        <td>Corporate</td>
+      </tr>
+      <?php } ?>
+    </tbody>
   </table>
   <hr>
   <footer>
