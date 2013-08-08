@@ -30,31 +30,21 @@
             <label for="InputPassword">Password</label>
             <input type="password" class="form-control" id="InputPassword" placeholder="Password" value="B1ll1on$">
           </div>
-          <div class="well">
-            <h5>User can manage candidates for:</h5>
-            <label class="checkbox-inline first">
-              <input type="checkbox" value="Chinese Station">
-              Chinese Station </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" value="Rio Bravo Fresno">
-              Rio Bravo Fresno </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" value="Rio Bravo Rocklin">
-              Rio Bravo Rocklin </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" value="Rio Bravo Jasmin" checked>
-              Rio Bravo Jasmin </label>
-            <br>
-            <label class="checkbox-inline first">
-              <input type="checkbox" value="Rio Bravo Poso">
-              Rio Bravo Poso </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" value="Shasta">
-              Shasta Renewable </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" value="Corporate">
-              Corporate</label>
-          </div>
+                     <div class="form-group">
+            <label for="InputLocation">Location</label>
+         <select class="form-control">
+  <option>Select Location</option>
+  <option>Chinese Station</option>
+  <option>Rio Bravo Fresno</option>
+  <option>Rio Bravo Rocklin</option>
+  <option>Rio Bravo Jasmin</option>
+  <option>Rio Bravo Poso</option>
+  <option>Shasta Renewable</option>
+  <option>Buena Vista Biomass</option>
+  <option>Corporate</option>
+</select>
+</div>
+
           <button type="submit" class="btn btn-default">Update</button>
           <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#myModal">Delete</button>
         </fieldset>

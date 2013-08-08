@@ -14,46 +14,50 @@
       </a> </div>
   </div>
   <table class="table table-striped table-hover">
-    <tr>
-      <th scope="col">Power Plant Name</th>
-      <th scope="col">Power Plant  Description</th>
-      <th scope="col" class="text-center">Delete</th>
-    </tr>
-    <tr>
-      <td><a href="plant_edit.php">Chinese Station</a></td>
-      <td>Announcement for candidate passing exam and qualifying for further evaluation</td>
-      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
-    </tr>
-    <tr>
-      <td><a href="plant_edit.php">Rio Brave Fresno</a></td>
-      <td>Announcement for offer of employment</td>
-      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
-    </tr>
-    <tr>
-      <td><a href="plant_edit.php">Rio Bravo Rocklin </a></td>
-      <td>Announcement for candidate failing exam and not qualifying for further evaluation</td>
-      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
-    </tr>
-    <tr>
-      <td><a href="plant_edit.php">Rio Bravo Jasmin</a></td>
-      <td>Use this template to create blank message</td>
-      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
-    </tr>
-    <tr>
-      <td><a href="plant_edit.php">Rio Bravo Poso</a></td>
-      <td>Use this template to create blank message</td>
-      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
-    </tr>
-    <tr>
-      <td><a href="plant_edit.php">Shasta Renewable</a></td>
-      <td>Use this template to create blank message</td>
-      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
-    </tr>
-    <tr>
-      <td><a href="plant_edit.php">Buena Vista Biomass</a></td>
-      <td>Use this template to create blank message</td>
-      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
-    </tr>
+    <thead>
+      <tr>
+        <th scope="col">Power Plant Name</th>
+        <th scope="col">Power Plant  Description</th>
+        <th scope="col" class="text-center">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="plant_edit.php">Chinese Station</a></td>
+        <td>Announcement for candidate passing exam and qualifying for further evaluation</td>
+        <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
+      </tr>
+      <tr>
+        <td><a href="plant_edit.php">Rio Brave Fresno</a></td>
+        <td>Announcement for offer of employment</td>
+        <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
+      </tr>
+      <tr>
+        <td><a href="plant_edit.php">Rio Bravo Rocklin </a></td>
+        <td>Announcement for candidate failing exam and not qualifying for further evaluation</td>
+        <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
+      </tr>
+      <tr>
+        <td><a href="plant_edit.php">Rio Bravo Jasmin</a></td>
+        <td>Use this template to create blank message</td>
+        <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
+      </tr>
+      <tr>
+        <td><a href="plant_edit.php">Rio Bravo Poso</a></td>
+        <td>Use this template to create blank message</td>
+        <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
+      </tr>
+      <tr>
+        <td><a href="plant_edit.php">Shasta Renewable</a></td>
+        <td>Use this template to create blank message</td>
+        <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
+      </tr>
+      <tr>
+        <td><a href="plant_edit.php">Buena Vista Biomass</a></td>
+        <td>Use this template to create blank message</td>
+        <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
+      </tr>
+    </tbody>
   </table>
   <!-- Modal -->
   <div class="modal fade" id="myModal">
