@@ -1,5 +1,25 @@
 <?php include 'inc/checkSession.php'; ?>
 <?php include 'inc/header.php'; ?>
+
+<?php
+	session_start();
+    include 'inc/db.php';
+    $_SESSION['message'] = '';
+    
+    // Connect to server and select databse.
+    $con = mysql_connect("$host", "$username", "$password")or die("cannot connect");
+    // Check connection
+	if (mysqli_connect_errno($con))
+  	{
+  		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  	}
+
+    mysql_select_db($db_name)or die("cannot select DB");
+    
+    $sql="SELECT * FROM $tbl_templates";
+    $result=mysql_query($sql);
+?>
+
 <body id="users">
 
 <!-- Master nav -->
@@ -14,31 +34,16 @@
       </a> </div>
   </div>
   <table class="table table-striped table-hover">
-    <tr>
-      <th scope="col">Template Name</th>
-      <th scope="col">Template Description</th>
-      <th scope="col" class="text-center">Delete</th>
-    </tr>
-    <tr>
-      <td><a href="template_edit.php">Passed</a></td>
-      <td>Announcement for candidate passing exam and qualifying for further evaluation</td>
-      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
-    </tr>
-    <tr>
-      <td><a href="template_edit.php">Accepted</a></td>
-      <td>Announcement for offer of employment</td>
-      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
-    </tr>
-    <tr>
-      <td><a href="template_edit.php">Rejected</a></td>
-      <td>Announcement for candidate failing exam and not qualifying for further evaluation</td>
-      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
-    </tr>
-    <tr>
-      <td><a href="template_edit.php">Custom</a></td>
-      <td>Use this template to create blank message</td>
-      <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
-    </tr>
+    <?php
+    while($temp = mysql_fetch_array($result))
+  	{
+  	?>
+      <tr>
+        <td><a href="template_edit.php?id=<?php echo $temp['temp_id'];?>"><?php echo $temp['TempName'];?></a></td>
+        <td><?php echo $temp['Description']; ?></td>
+        <td class="text-center"><a data-toggle="modal" data-target="#myModal" href="#"><i class="icon-remove icon-large"></i></a></td>
+      </tr>
+    <?php } ?>
   </table>
   <!-- Modal -->
   <div class="modal fade" id="myModal">

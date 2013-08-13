@@ -1,5 +1,29 @@
 <?php include 'inc/checkSession.php'; ?>
 <?php include 'inc/header.php'; ?>
+<?php
+	session_start();
+    include 'inc/db.php';
+    
+    // Get the user data
+
+    // Connect to server and select databse.
+    $con = mysql_connect("$host", "$username", "$password")or die("cannot connect");
+    // Check connection
+	if (mysqli_connect_errno($con))
+  	{
+  		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  	}
+    mysql_select_db($db_name)or die("cannot select DB");
+    $userID = $_GET['id'];
+    $sql="SELECT * FROM $tbl_user WHERE user_id='$userID'";
+    $result=mysql_query($sql);
+    $user = mysql_fetch_array($result);
+    
+    mysqli_close($con);
+    
+    include 'inc/get_plants.php';
+?>
+
 <body id="users">
 
 <!-- Master nav -->
@@ -12,38 +36,37 @@
   </div>
   <div class="row form">
     <div class="col-lg-8">
-      <form>
-        <fieldset>
+      <form class="form-upduser" name="updUserForm" method="post" action="user_update.php">
+        <fieldset>  
+          <input type="hidden" class="form-control" id="InputID" name="userID" value="<?php echo $user['user_id']; ?>">
           <div class="form-group">
             <label for="InputLastName">Last name</label>
-            <input type="text" class="form-control" id="InputLastName" placeholder="Enter last name" value="Avagyan">
+            <input type="text" class="form-control" id="InputLastName" name="LastNameU" placeholder="Enter last name" value="<?php echo $user['LastName']; ?>">
           </div>
           <div class="form-group">
             <label for="InputFirstName">First name</label>
-            <input type="text" class="form-control" id="InputFirstName" placeholder="Enter first name" value="Vahe">
+            <input type="text" class="form-control" id="InputFirstName" name="FirstNameU" placeholder="Enter first name" value="<?php echo $user['FirstName']; ?>">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail">Email address</label>
-            <input type="text" class="form-control" id="InputEmail" placeholder="Enter email" value="todd@rapparport.com">
+            <input type="text" class="form-control" id="InputEmail" name="EmailU" placeholder="Enter email" value="<?php echo $user['Email']; ?>">
           </div>
           <div class="form-group">
             <label for="InputPassword">Password</label>
-            <input type="password" class="form-control" id="InputPassword" placeholder="Password" value="B1ll1on$">
+            <input type="password" class="form-control" id="InputPassword" name="PasswordU" placeholder="Password" value="<?php echo $user['Password']; ?>">
           </div>
-                     <div class="form-group">
-            <label for="InputLocation">Location</label>
-         <select class="form-control">
-  <option>Select Location</option>
-  <option>Chinese Station</option>
-  <option>Rio Bravo Fresno</option>
-  <option>Rio Bravo Rocklin</option>
-  <option>Rio Bravo Jasmin</option>
-  <option>Rio Bravo Poso</option>
-  <option>Shasta Renewable</option>
-  <option>Buena Vista Biomass</option>
-  <option>Corporate</option>
-</select>
-</div>
+          <div class="form-group">
+          <label for="InputLocation">Location</label>
+          <select class="form-control">
+          <option>Select Location</option>
+          <?php
+    	  while($location = mysql_fetch_array($result))
+  		  {
+  		  ?>
+  		     <option><?php echo $location['PlantName']; ?></option>
+  		  <?php } ?>  
+		  </select>
+		  </div>
 
           <button type="submit" class="btn btn-default">Update</button>
           <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#myModal">Delete</button>
@@ -60,7 +83,7 @@
             <div class="modal-body">
               <p>Are you sure you want to delete this user?</p>
             </div>
-            <div class="modal-footer"> <a href="#" class="btn btn-default" data-dismiss="modal">Close</a> <a href="#" class="btn btn-danger">Delete</a> </div>
+            <div class="modal-footer"> <a href="#" class="btn btn-default" data-dismiss="modal">Close</a> <a href="user_delete.php?id=<?php echo $userID; ?>" class="btn btn-danger">Delete</a> </div>
           </div>
           <!-- /.modal-content --> 
         </div>

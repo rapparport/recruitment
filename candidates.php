@@ -3,7 +3,7 @@
 <?php
 	session_start();
     include 'inc/db.php';
-    $tbl_name="recruits"; // Table name
+    $_SESSION['message'] = '';
     
     // Connect to server and select databse.
     $con = mysql_connect("$host", "$username", "$password")or die("cannot connect");
@@ -15,7 +15,7 @@
 
     mysql_select_db("$db_name")or die("cannot select DB");
     
-    $sql="SELECT * FROM $tbl_name";
+    $sql="SELECT * FROM $tbl_recruits";
     $result=mysql_query($sql);
     $count = 0;
 ?>
@@ -129,8 +129,7 @@ $('#reportrange').daterangepicker(
         </tr>
       </thead>
       <tbody>
-        <?php
-     
+      <?php
       while($row = mysql_fetch_array($result))
   	  {
   	  ?>

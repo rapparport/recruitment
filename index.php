@@ -67,10 +67,10 @@
             <form class="form-signin" name="loginForm" method="post" action="login.php" >
               <h2 class="form-signin-heading">Please sign in</h2>
               <div class="form-group">
-                <input type="text" name="exampleInputEmail" class="form-control" id="exampleInputEmail" placeholder="Enter email">
+                <input type="text" name="InputEmail" class="form-control" id="InputEmail" placeholder="Enter email">
               </div>
               <div class="form-group">
-                <input type="password" name="exampleInputPassword" class="form-control" id="exampleInputPassword" placeholder="Password">
+                <input type="password" name="InputPassword" class="form-control" id="InputPassword" placeholder="Password">
               </div>
               <p><a href="#">Forgot your password?</a></p>
             <button class="btn btn-large btn-primary btn-block" type="submit">Sign in</button>

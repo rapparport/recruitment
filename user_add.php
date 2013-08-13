@@ -1,5 +1,8 @@
 <?php include 'inc/checkSession.php'; ?>
 <?php include 'inc/header.php'; ?>
+<?php include 'inc/db.php'; ?>
+<?php include 'inc/get_plants.php'; ?>
+
 <body id="users">
 
 <!-- Master nav -->
@@ -12,38 +15,37 @@
   </div>
   <div class="row form">
     <div class="col-lg-8">
-      <form>
+      <?php if($_SESSION['message'] == 'emptyU') {?> <p style="color:red;">Please fill in all fields</p> <?php } ?>
+      <form name="addUserForm" method="post" action="user_insert.php">
         <fieldset>
           <div class="form-group">
             <label for="InputLastName">Last name</label>
-            <input type="text" class="form-control" id="InputLastName" placeholder="Enter last name">
+            <input type="text" class="form-control" id="InputLastName" name="newLastName" placeholder="Enter last name">
           </div>
           <div class="form-group">
             <label for="InputFirstName">First name</label>
-            <input type="text" class="form-control" id="InputFirstName" placeholder="Enter first name">
+            <input type="text" class="form-control" id="InputFirstName" name="newFirstName" placeholder="Enter first name">
           </div>
           <div class="form-group">
-            <label for="InputEmail">Email address</label>
-            <input type="text" class="form-control" id="InputEmail" placeholder="Enter email">
+            <label for="exampleInputEmail">Email address</label>
+            <input type="text" class="form-control" id="InputEmail" name="newEmail" placeholder="Enter email">
           </div>
           <div class="form-group">
             <label for="InputPassword">Password</label>
-            <input type="password" class="form-control" id="InputPassword" placeholder="Password">
+            <input type="password" class="form-control" id="InputPassword" name="newPass" placeholder="Password">
           </div>
-           <div class="form-group">
+          <div class="form-group">
             <label for="InputLocation">Location</label>
          <select class="form-control">
-  <option>Select Location</option>
-  <option>Chinese Station</option>
-  <option>Rio Bravo Fresno</option>
-  <option>Rio Bravo Rocklin</option>
-  <option>Rio Bravo Jasmin</option>
-  <option>Rio Bravo Poso</option>
-  <option>Shasta Renewable</option>
-  <option>Buena Vista Biomass</option>
-  <option>Corporate</option>
-</select>
-</div>
+         <option>Select Location</option>
+         <?php
+    	 while($location = mysql_fetch_array($result))
+  		 {
+  		 ?>
+  		    <option><?php echo $location['PlantName']; ?></option>
+  		 <?php } ?>
+		 </select>
+		 </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </fieldset>
       </form>

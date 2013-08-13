@@ -8,7 +8,7 @@
         <li <?php if(basename($_SERVER['PHP_SELF']) == "templates.php"){ ?> class="active"<?php } ?>><a href="templates.php">Email Templates</a></li>
         <li <?php if(basename($_SERVER['PHP_SELF']) == "plants.php"){ ?> class="active"<?php } ?>><a href="plants.php">Power Plants</a></li>
       </ul>
-      <p class="navbar-text pull-right">Signed in as <a href="user_edit.php" class="navbar-link"><?php echo $userName;?></a> | <a href="#" class="navbar-link"><i class="icon-user"></i> My Profile</a> | <a href="logout.php" class="navbar-link">Sign Out</a></p>
+      <p class="navbar-text pull-right">Signed in as <a href="user_edit.php?id=<?php echo $userIDcurrent;?>" class="navbar-link"><?php echo $userName;?></a> | <a href="#" class="navbar-link"><i class="icon-user"></i> My Profile</a> | <a href="logout.php" class="navbar-link">Sign Out</a></p>
     </div>
   </div>
 </div>

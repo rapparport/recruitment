@@ -4,7 +4,7 @@
 <?php
 	session_start();
     include 'inc/db.php';
-    $tbl_name="user"; // Table name
+    $_SESSION['message'] = '';
     
     // Connect to server and select databse.
     $con = mysql_connect("$host", "$username", "$password")or die("cannot connect");
@@ -14,9 +14,9 @@
   		echo "Failed to connect to MySQL: " . mysqli_connect_error();
   	}
 
-    mysql_select_db("$db_name")or die("cannot select DB");
+    mysql_select_db($db_name)or die("cannot select DB");
     
-    $sql="SELECT * FROM $tbl_name";
+    $sql="SELECT * FROM $tbl_user";
     $result=mysql_query($sql);
 ?>
 
@@ -44,18 +44,18 @@
       </tr>
     </thead>
     <tbody>
-      <?php
+    <?php
     while($member = mysql_fetch_array($result))
   	{
   	?>
       <tr>
-        <td><a href="user_edit.php"><?php echo $member['LastName']; ?></a></td>
+        <td><a href="user_edit.php?id=<?php echo $member['user_id'];?>"><?php echo $member['LastName'];?></a></td>
         <td><?php echo $member['FirstName']; ?></td>
         <td><?php echo $member['Email']; ?></td>
         <td><?php echo passToStars($member['Password']); ?></td>
-        <td>Corporate</td>
+        <td><?php echo $member['Location'] ?></td>
       </tr>
-      <?php } ?>
+    <?php } ?>
     </tbody>
   </table>
   <hr>

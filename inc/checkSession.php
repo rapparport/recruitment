@@ -8,5 +8,6 @@
 	else
 	{
     	$userName = $_SESSION['NAMEF']." ".$_SESSION['NAMEL'];
+    	$userIDcurrent = $_SESSION['uID'];
     }
 ?>
