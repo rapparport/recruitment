@@ -1,4 +1,0 @@
-IHI
-===
-
-IHI Recruitment System

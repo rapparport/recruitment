@@ -20,6 +20,12 @@
     $count = 0;
 ?>
 
+
+<script type="text/javascript" charset="utf-8" language="javascript" src="/release-datatables/media/js/jquery.js"></script>
+		<script type="text/javascript" charset="utf-8" language="javascript" src="/release-datatables/media/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8" language="javascript" src="DT_bootstrap.js"></script>
+
+
 <body>
 
 <!-- Master nav -->
@@ -113,7 +119,7 @@ $('#reportrange').daterangepicker(
   <form name="theForm">
     Select <a href="javascript:selectToggle(true, 'theForm');">All</a> | <a href="javascript:selectToggle(false, 'theForm');">None</a>
     <p>
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover" cellpadding="0" cellspacing="0" border="0" id="example">
       <thead>
         <tr>
           <th scope="col">&nbsp;</th>
@@ -152,6 +158,8 @@ $('#reportrange').daterangepicker(
       </tbody>
     </table>
   </form>
+
+
   <div class="container"> 
     <!-- Split button -->
     <div class="btn-group pull-right">
@@ -179,6 +187,7 @@ $('#reportrange').daterangepicker(
     <p><small>Copyright &copy; <?php echo date("Y") ?> IHI Power Services Corp. All rights reserved.</small></p>
   </footer>
 </div>
+
 <!-- /container --> 
 <script>
 function selectToggle(toggle, form) {
