@@ -21,10 +21,6 @@
 ?>
 
 
-<script type="text/javascript" charset="utf-8" language="javascript" src="/release-datatables/media/js/jquery.js"></script>
-		<script type="text/javascript" charset="utf-8" language="javascript" src="/release-datatables/media/js/jquery.dataTables.js"></script>
-		<script type="text/javascript" charset="utf-8" language="javascript" src="DT_bootstrap.js"></script>
-
 
 <body>
 

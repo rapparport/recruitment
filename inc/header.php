@@ -29,6 +29,16 @@ body {
 <script src="js/vendor/moment.min.js"></script> 
 <script src="js/vendor/daterangepicker.js"></script> 
 <script src="js/vendor/bootstrap-datepicker.js"></script> 
+<script type="text/javascript" charset="utf-8" language="javascript" src="release-datatables/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf-8" language="javascript" src="js/vendor/DT_bootstrap.js"></script><link rel="stylesheet" type="text/css" href="css/DT_bootstrap.css">
+<script type="text/javascript" charset="utf-8">
+$(document).ready( function () {
+   $(document).ready(function() {
+				$('#example').dataTable( {
+					"aaSorting": [[ 4, "desc" ]]
+				} );
+			} );
+</script>
 
 <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
