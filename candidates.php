@@ -21,11 +21,11 @@
 ?>
 
 
-
 <body>
 
 <!-- Master nav -->
 <?php include 'inc/menu.php'; ?>
+
 <div class="container">
   <div class="row title">
     <div class="col-12 col-sm-8 col-lg-8">
@@ -39,20 +39,20 @@
   <div class="well well-small"> 
     <!-- Split button -->
     <div class="btn-group">
-      <button type="button" class="btn btn-ihi btn-small">Name</button>
+      <button type="button" class="btn btn-ihi btn-small" onclick="myFunction()">Name</button>
       <button type="button" class="btn btn-ihi btn-small dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
       <ul class="dropdown-menu">
-        <li><a href="#">Sort by Last Name</a></li>
-        <li><a href="#">Sort by First Name</a></li>
+        <li class="sorting"><a href="#" id="sortbylast">Sort by Last Name</a></li>
+        <li class="sorting"><a href="#" id="sortbyfirst">Sort by First Name</a></li>
       </ul>
     </div>
     <!-- Split button -->
     <div class="btn-group">
-      <button type="button" class="btn btn-ihi btn-small">Recommend</button>
+      <button type="button" class="btn btn-ihi btn-small" id="btnSort">Recommend</button>
       <button type="button" class="btn btn-ihi btn-small dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
       <ul class="dropdown-menu">
-        <li><a href="#">Recommended Only</a></li>
-        <li><a href="#">Not Recommended Only</a></li>
+        <li><a href="#" id="recomCol">Recommended Only</a></li>
+        <li><a href="#" id="notrecomCol">Not Recommended Only</a></li>
       </ul>
     </div>
     <!-- Split button -->
@@ -70,9 +70,9 @@
       <button type="button" class="btn btn-ihi btn-small">Position</button>
       <button type="button" class="btn btn-ihi btn-small dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
       <ul class="dropdown-menu">
-        <li><a href="#">O&M Tech I</a></li>
-        <li><a href="#">O&M Tech II</a></li>
-        <li><a href="#">O&M Tech III</a></li>
+        <li><a href="#" id="positionCol1">O&M Tech I</a></li>
+        <li><a href="#" id="positionCol2">O&M Tech II</a></li>
+        <li><a href="#" id="positionCol3">O&M Tech III</a></li>
       </ul>
     </div>
     <!-- Split button -->
@@ -109,7 +109,8 @@ $('#reportrange').daterangepicker(
 </script> 
     <!-- Search box -->
     <form class="pull-right" action="">
-      <input type="text" class="form-control input-small col-lg-8" placeholder="Search">
+      <input type="text" class="form-control input-small col-lg-8" id="search-box" placeholder="Search">
+      <input type="text" id="myInputTextField">
     </form>
   </div>
   <form name="theForm">
@@ -130,6 +131,7 @@ $('#reportrange').daterangepicker(
           <th scope="col">Plant Location</th>
         </tr>
       </thead>
+      
       <tbody>
       <?php
       while($row = mysql_fetch_array($result))
@@ -142,7 +144,7 @@ $('#reportrange').daterangepicker(
           <td><?php echo $row['Email'];?></td>
           <td><?php echo $row['TestDate'];?></td>
           <td><?php echo $row['TestLocation'];?></td>
-          <td><?php echo $row['TestResult'];?></td>
+          <td id="testres"><?php echo $row['TestResult'];?></td>
           <td><?php echo $row['ProbPass'];?></td>
           <td><?php echo $row['Position'];?></td>
           <td><?php echo $row['WorkLocation'];?></td>
@@ -152,6 +154,7 @@ $('#reportrange').daterangepicker(
       } 
       ?>
       </tbody>
+      
     </table>
   </form>
 
@@ -204,5 +207,50 @@ function selectToggle(toggle, form) {
             g.src='//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+<script>
+jQuery("#sortbylast").click(function(e){
+	oTable = $('#example').dataTable();
+	oTable.fnSort([[1,'asc']]);
+	e.preventDefault();
+});
+
+jQuery("#sortbyfirst").click(function(e){
+	oTable = $('#example').dataTable();
+	oTable.fnSort([[2,'asc']]);
+	e.preventDefault();
+});
+
+
+jQuery("#recomCol").click(function(e){
+	oTable = $('#example').dataTable();
+    oTable.fnFilter("^"+"R"+"$", 6, true);
+	e.preventDefault();
+});
+
+
+jQuery("#notrecomCol").click(function(e){
+	oTable = $('#example').dataTable();
+	oTable.fnFilter('NR',6);
+	e.preventDefault();
+});
+
+jQuery("#positionCol1").click(function(e){
+	oTable = $('#example').dataTable();
+    oTable.fnFilter("O&M", 8);
+	e.preventDefault();
+});
+
+jQuery("#positionCol2").click(function(e){
+	oTable = $('#example').dataTable();
+    oTable.fnFilter("^"+"O&M Tech 2"+"$", 8);
+	e.preventDefault();
+});
+jQuery("#positionCol3").click(function(e){
+	oTable = $('#example').dataTable();
+    oTable.fnFilter("^"+"O&M Tech 3"+"$", 8, true);
+	e.preventDefault();
+});
+
+</script>
 </body>
 </html>

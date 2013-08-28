@@ -30,15 +30,26 @@ body {
 <script src="js/vendor/daterangepicker.js"></script> 
 <script src="js/vendor/bootstrap-datepicker.js"></script> 
 <script type="text/javascript" charset="utf-8" language="javascript" src="release-datatables/media/js/jquery.dataTables.js"></script>
-<script type="text/javascript" charset="utf-8" language="javascript" src="js/vendor/DT_bootstrap.js"></script><link rel="stylesheet" type="text/css" href="css/DT_bootstrap.css">
+
+</script><link rel="stylesheet" type="text/css" href="css/DT_bootstrap.css">
 <script type="text/javascript" charset="utf-8">
-$(document).ready( function () {
-   $(document).ready(function() {
-				$('#example').dataTable( {
-					"aaSorting": [[ 4, "desc" ]]
-				} );
-			} );
+var oTable = $(document).ready(function() {
+    $('#example').dataTable( {
+        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+        
+        "aaSorting": [[ 0, "asc" ]]
+    } )
+} );
+
 </script>
+
+<script>
+oTable = $('#example').dataTable();
+$('#myInputTextField').keypress(function(){
+      oTable.fnFilter( $(this).val() );
+})
+</script>
+
 
 <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
